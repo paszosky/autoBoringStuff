@@ -10,4 +10,18 @@ import os
 
 # os.unlink('hello-new-name.txt')
 # os.rmdir('.\\do-przeniesienia')
-shutil.rmtree('.\\do-przeniesienia')
+# shutil.rmtree('.\\do-przeniesienia')
+
+for folderName, subfolders, filenames in os.walk('c:\\dev'):
+    print('The folder is ' + folderName)
+    print('The subfolders in ' + folderName + ' are: ' + str(subfolders))
+    print('The filenames in ' + folderName + ' are: ' + str(filenames))
+
+    for subfolder in subfolders:
+        if 'fish' in subfolder:
+            # os.rmdir(subfolder) USUNIE FOLDERY Z NAZWA FISH
+            print('rmdir on ' + subfolder)
+
+    for file in filename:
+        # if file.endswith('.rozszerzenie'): ZMIENI NAZWĘ PLIKÓW z .rozszerzenie na .backup
+            shutil.copy(os.join(folderName, file), os.join(folderName, file + '.backup'))
