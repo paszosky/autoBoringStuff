@@ -1,6 +1,6 @@
 from PyPDF2 import PdfReader
 
-# pdfFile = open('stowarzyszenie.pdf', 'rb')
+
 reader = PdfReader("stowarzyszenie.pdf")
 print(len(reader.pages))
 
